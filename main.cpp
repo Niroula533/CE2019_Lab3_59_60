@@ -4,32 +4,37 @@
 int main()
 {
 	ArrayBST arrayTree;
-	//arrayTree.isEmpty() ? std::cout << "Empty" : std::cout << "Not Empty";
+	//check if tree is empty (should result in empty)
+	arrayTree.isEmpty() ? std::cout << "Empty" : std::cout << "Not Empty";
+	std::cout << std::endl;
+
+	//adding data in tree
 	arrayTree.addBst(40);
 	arrayTree.addBst(20);
 	arrayTree.addBst(1);
 	arrayTree.addBst(70);
-	//arrayTree.isEmpty() ? std::cout << "Empty" : std::cout << "Not Empty";
 	arrayTree.addBst(55);
 	arrayTree.addBst(23);
 	arrayTree.addBst(89);
-	arrayTree.addBst(34);
-	arrayTree.addBst(66);
-	arrayTree.addBst(2);
-	arrayTree.addBst(45);
-	arrayTree.addBst(17);
-	arrayTree.addBst(11);
-	arrayTree.addBst(60);
-	arrayTree.addBst(75);
-	arrayTree.printBST();
-	
-	std::cout << std::endl;
-	//arrayTree.searchBst(23) ? std::cout << "found" : std::cout << "Not Found";
+
+	//check if tree is empty (should not result in empty)
+	arrayTree.isEmpty() ? std::cout << "Empty" : std::cout << "Not Empty";
 	std::cout << std::endl;
 	
-	arrayTree.removeBst(70);
+	//printing tree in inorder traversal
 	arrayTree.printBST();
+	std::cout << "\n";
+
+	//search if a value exist or not; if exists return true else false
+	arrayTree.searchBst(23) ? std::cout << "Data exists in the tree." : std::cout << "Data doesn't exist in the tree.";
+	std::cout << std::endl;
 	
+	//remove a data from tree
+	arrayTree.removeBst(23);
+	arrayTree.printBST();
+	std::cout << "\n";
+
+
 	//std::cout << "Largest\t" << arrayTree.largest(5);
 
 

@@ -33,11 +33,13 @@ void ArrayBST::removeBst(int key, int index)
 	{
 		if (arr[2 * index] == 0)
 		{
-			//make right subtree the root
+			arr[index] = arr[2 * index + 1];
+			removeBst(arr[2 * index + 1], 2 * index + 1);
 		}
 		else if (arr[2 * index + 1] == 0)
 		{
-			//make left subtree the root
+			arr[index] = arr[2 * index];
+			removeBst(arr[2 * index], 2 * index);
 		}
 		else
 		{
@@ -46,6 +48,7 @@ void ArrayBST::removeBst(int key, int index)
 			if (arr[2 * largestValueIndex] != 0 || arr[2 * largestValueIndex + 1] != 0)
 			{
 				removeBst(arr[largestValueIndex], largestValueIndex);
+				return;
 			}
 			arr[largestValueIndex] = 0;
 		}
@@ -75,7 +78,7 @@ void ArrayBST::printBST(int value)
 		return;
 
 	printBST(2 * value);
-	std::cout << arr[value] << "(" << value << ")" << "\t";
+	std::cout << arr[value] << "\t";
 	printBST(2 * value + 1);
 }
 
@@ -85,3 +88,4 @@ int ArrayBST::largest(int index)
 		return index;
 	largest(2 * index + 1);
 }
+
