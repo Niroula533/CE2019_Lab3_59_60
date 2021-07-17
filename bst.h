@@ -2,8 +2,8 @@
 
 class Abstractbst {
 public:
-	virtual bool isEmpty();
-	virtual void addBst(int key);
-	virtual void removeBst(int key);
-	virtual bool searchBst(int key);
+	virtual bool isEmpty() = 0;
+	virtual void addBst(int key, int index) = 0;
+	virtual void removeBst(int key, int index) = 0;
+	virtual bool searchBst(int key, int index) = 0;
 };
