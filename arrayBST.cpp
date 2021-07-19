@@ -1,5 +1,5 @@
 #include<iostream>
-#include "arrayBST.h"
+#include "include/arrayBST.h"
 
 
 bool ArrayBST::isEmpty()
