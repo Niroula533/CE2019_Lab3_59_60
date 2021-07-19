@@ -7,28 +7,28 @@ bool ArrayBST::isEmpty()
 	return(arr[1] == 0);
 }
 
-void ArrayBST::addBst(int key, int index)
+void ArrayBST::addBst(int data, int index, Node* newnode)
 {
 	if (arr[index] == 0)
 	{
-		arr[index] = key;
+		arr[index] = data;
 		return;
 	}
-	if (key < arr[index])
-		addBst(key, 2 * index);
+	if (data < arr[index])
+		addBst(data, 2 * index);
 	else
-		addBst(key, 2 * index + 1);
+		addBst(data, 2 * index + 1);
 }
 
-void ArrayBST::removeBst(int key, int index)
+void ArrayBST::removeBst(int data, int index, Node* root)
 {
 	if (arr[index] == 0)
 		return;
 	
-	if (key < arr[index])
-		removeBst(key, 2 * index);
-	else if (key > arr[index])
-		removeBst(key, 2 * index + 1);
+	if (data < arr[index])
+		removeBst(data, 2 * index);
+	else if (data > arr[index])
+		removeBst(data, 2 * index + 1);
 	else
 	{
 		if (arr[2 * index] == 0)
@@ -57,16 +57,15 @@ void ArrayBST::removeBst(int key, int index)
 
 
 
-
-bool ArrayBST::searchBst(int key, int index)
+bool ArrayBST::searchBst(int data, int index, Node* root)
 {
-	if(arr[index] == key)		
+	if(arr[index] == data)		
 		return true;
 	
-	if (key < arr[index] && arr[2 * index] != 0)
-		searchBst(key, 2 * index);
-	else if (key > arr[index] && arr[2 * index + 1] != 0)
-		searchBst(key, 2 * index + 1);
+	if (data < arr[index] && arr[2 * index] != 0)
+		searchBst(data, 2 * index);
+	else if (data > arr[index] && arr[2 * index + 1] != 0)
+		searchBst(data, 2 * index + 1);
 	else
 		return false;
 }
