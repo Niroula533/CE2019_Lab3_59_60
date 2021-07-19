@@ -9,9 +9,9 @@ private:
 public:
 	ArrayBST(int root = 0) :root(root){}
 	bool isEmpty();
-	void addBst(int data, int index = 1, Node* newnode = nullptr);
-	void removeBst(int data, int index = 1, Node* root = nullptr);
-	bool searchBst(int data, int index = 1 , Node* root = nullptr);
+	void addBst(int data, int index = 1);
+	void removeBst(int data, int index = 1);
+	bool searchBst(int data, int index = 1);
 	void printBST(int value = 1);
 	int largest(int index);
 };
